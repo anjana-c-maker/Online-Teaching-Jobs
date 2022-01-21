@@ -22,7 +22,7 @@
            border: 1px solid #afaaaa;
            margin-bottom: 25px;
         }
-        input[type="submit"]{
+        input[type="button"]{
             background-color: darkmagenta;
             border-radius: 12px;
             color: white;
@@ -45,8 +45,8 @@
         <p style="font-size: 30px;">Please select appropriate user group :</p>
         <form method="post">
             {% csrf_token %} 
-            <input type="submit" value="JOB SEEKER" name="reg-job-seeker">
-            <input type="submit" value="EMPLOYER" name="reg-employer">
+            <a href="{% url 'reg-job-seeker' %}"><input type="button" value="JOB SEEKER"></a>
+            <a href="{% url 'reg-employer' %}"><input type="button" value="EMPLOYER"></a>
            
         </form>
 
