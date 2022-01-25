@@ -1,3 +1,4 @@
+
 {% load static %}
 
 
@@ -75,20 +76,24 @@ a {
 </head>
 <body>
 
-<form action="/action_page.php">
+<form method='POST'>
+  {% csrf_token%}
   <div class="container">
     <h1>Register</h1>
     <hr>
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-
-    
-
+    <label for="username"><b>Username</b></label>
+    {{form.username}}
+    <label for="email"><b>Email </b></label>
+    {{form.email}}
+    <br>
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-
+    {{form.password1}}
     <label for="psw-repeat"><b>Confirm Password</b></label>
-    <input type="password" placeholder="confirm" name="psw-repeat" id="psw-repeat" required>
+    {{form.password2}}
+    <label for="firstname"><b>First name</b></label>
+    {{form.first_name}}
+    <label for="Lastname"><b>Name of Your Company</b></label>
+    {{form.last_name}}
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
@@ -98,3 +103,17 @@ a {
 
 </body>
 </html>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 

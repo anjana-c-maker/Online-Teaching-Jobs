@@ -1,6 +1,7 @@
 from django.urls import path
 from django.urls.resolvers import URLPattern
 from .import views
+from django.urls import include
 
 urlpatterns = [
     path('',views.index,name='index'),
@@ -8,5 +9,7 @@ urlpatterns = [
      path('register_jobseeker', views.register_jobseeker,name='reg-job-seeker'),
      path('register_employer', views.register_employer,name='reg-employer'),
      path('signin', views.signin,name='signin'),
+   
+
 
 ]

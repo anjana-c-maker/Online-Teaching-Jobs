@@ -1,7 +1,9 @@
 from multiprocessing import context
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import UserCreationForm 
+from jobs.forms import CustomForm
 # Create your views here.
+
 def index(request) :
     return render(request,'index.html')
 
@@ -12,9 +14,9 @@ def register(request) :
 
 
 def register_jobseeker(request) :
-            form = UserCreationForm()
+            form = CustomForm()
             if request.method == 'POST':
-                form = UserCreationForm(request.POST)
+                form = CustomForm(request.POST)
                 if form.is_valid():
                     form.save()
                     return redirect('signin')
@@ -23,10 +25,21 @@ def register_jobseeker(request) :
             } 
             return render(request, 'register_jobseeker.html', context)  
 
+
+def register_employer(request) :
+            form = CustomForm()
+            if request.method == 'POST':
+                form = CustomForm(request.POST)
+                if form.is_valid():
+                    form.save()
+                    return redirect('signin')
+            context = {
+                "form":form
+            } 
+            return render(request, 'register_employer.html', context)  
+
+
 def signin(request) :
     return render(request,'signin.html') 
 
-def register_employer(request) :  
-
-    return render(request,'register_employer.html')
 
