@@ -63,15 +63,8 @@ span.psw {
   margin-right:100x;
 
 }
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-
-
+a{
+  padding:60px;
 }
 </style>
 </head>
@@ -86,6 +79,8 @@ span.psw {
     <hr>
     {{form}}
     <button type="submit">Login</button>
+
+    <a href="{% url 'jobs:register' %}">Registration</a>
 </div>
 
 

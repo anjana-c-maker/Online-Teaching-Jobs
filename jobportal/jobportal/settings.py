@@ -56,7 +56,8 @@ ROOT_URLCONF = 'jobportal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +69,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'jobportal.wsgi.application'
 
@@ -124,4 +126,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = 'accounts:login'

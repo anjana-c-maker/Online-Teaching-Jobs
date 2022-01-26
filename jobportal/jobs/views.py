@@ -19,7 +19,7 @@ def register_jobseeker(request) :
                 form = CustomForm(request.POST)
                 if form.is_valid():
                     form.save()
-                    return redirect('signin')
+                    return redirect('accounts:login')
             context = {
                 "form":form
             } 
@@ -32,14 +32,10 @@ def register_employer(request) :
                 form = CustomForm(request.POST)
                 if form.is_valid():
                     form.save()
-                    return redirect('signin')
+                    return redirect('accounts:login')
             context = {
                 "form":form
             } 
             return render(request, 'register_employer.html', context)  
-
-
-def signin(request) :
-    return render(request,'signin.html') 
 
 
